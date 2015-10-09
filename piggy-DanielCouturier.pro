@@ -12,5 +12,9 @@ QT       += core gui network xml
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 # Input
-HEADERS +=
-SOURCES +=  piggy-DanielCouturier.cpp
+HEADERS += \
+    piggybutton.h \
+    mymainwindow.h
+SOURCES +=  piggy-DanielCouturier.cpp \
+    piggybutton.cpp \
+    mymainwindow.cpp
