@@ -1,24 +1,47 @@
 #include "piggybutton.h"
 
-piggyButton::piggyButton(int num, QString title, QString message)
+piggyButton::piggyButton(QString inTitle)
 {
-    yell = new QMessageBox();
-    QString temp = "button ";
-    temp += QString::number(num);
-    temp += ": ";
-    message = temp + message;
-    yell->setText(message);
-    this->setText(title);
+    this->num = 0;
+    title = inTitle;
+    this->setText(QString::number(num) +  " " + title);
+
+    this->setCheckable(true);
+    this->setChecked(false);
 
     QObject::connect(this,SIGNAL(clicked()), this, SLOT(boxUp()));
-
-
 
 }
 
 void piggyButton::boxUp(void)
 {
-   yell->show();
+   this->setCheckable(true);
+   this->setChecked(true);
 }
 
+void piggyButton::increment()
+{
+    this->num++;
+    this->setText(QString::number(num) +  " " + title);
 
+//    cout<< this->num << " :  ";
+//    cout << this->text().toStdString() << endl;
+    this->setChecked(true);
+
+}
+
+void piggyButton::decrement(void)
+{
+    this->num--;
+    this->setText(QString::number(num) +  " " + title);
+
+//    cout<< this->num << " :  ";
+//    cout << this->text().toStdString() << endl;
+    this->setChecked(true);
+
+}
+
+void piggyButton::printOut(void)
+{
+    cout << this->text().toStdString() << endl;
+}

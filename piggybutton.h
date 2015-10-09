@@ -5,16 +5,23 @@
 #include <QtGui>
 #include <QtWidgets>
 #include <QGridLayout>
+#include <iostream>
+
+using namespace std;
 
 class piggyButton : public QPushButton
 {
     Q_OBJECT
 public:
-   explicit piggyButton( int num=0, QString title = "title", QString message = "message");
-    QMessageBox *yell;
+   explicit piggyButton( QString inTitle = "title");
+    int num;
+    QString title;
 
 public slots:
     void boxUp(void);
+    void increment(void);
+    void decrement(void);
+    void printOut(void);
 
 signals:
 
