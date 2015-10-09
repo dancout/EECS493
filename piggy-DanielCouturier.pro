@@ -14,7 +14,11 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 # Input
 HEADERS += \
     piggybutton.h \
-    mymainwindow.h
+    mymainwindow.h \
+    myinccomm.h \
+    mydeccomm.h
 SOURCES +=  piggy-DanielCouturier.cpp \
     piggybutton.cpp \
-    mymainwindow.cpp
+    mymainwindow.cpp \
+    myinccomm.cpp \
+    mydeccomm.cpp
