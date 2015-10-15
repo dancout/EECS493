@@ -16,9 +16,44 @@
 		function myFunction() {
 		var c = document.getElementById("myCanvas");
 		var ctx = c.getContext("2d");
-		ctx.moveTo(0,0);
-		ctx.lineTo(200,100);
-		ctx.stroke();
+
+		// house frame
+		ctx.fillStyle = "blue";
+		ctx.fillRect(5, 50, 200, 50);
+
+		// door
+		ctx.fillStyle = "black";
+		ctx.fillRect(90, 70, 30, 30);
+
+		// side frame
+		ctx.fillStyle = "red";
+		ctx.beginPath();
+		ctx.moveTo(205, 50);
+		ctx.lineTo(220, 45);
+		ctx.lineTo(220, 95);
+		ctx.lineTo(205, 100);
+		ctx.lineTo(205, 50);
+		ctx.fill();
+		
+		// main roof
+		ctx.fillStyle = "red";
+		ctx.beginPath();
+		ctx.moveTo(5, 50);
+		ctx.lineTo(205, 50);
+		ctx.lineTo(90, 25);
+		ctx.lineTo(5, 50);
+		ctx.fill();
+
+		// side roof
+		ctx.fillStyle = "blue";
+		ctx.beginPath();
+		ctx.moveTo(90, 25);
+		ctx.lineTo(205, 50);
+		ctx.lineTo(220, 45);
+		ctx.lineTo(90, 25);
+		ctx.fill();
+
+
 		}
 	</script>
 
