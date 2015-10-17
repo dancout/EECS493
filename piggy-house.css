@@ -1,4 +1,4 @@
-#wrapper {
+#mainContent {
 	padding: 50px;
 	border-style: solid;
 	border-color: gray;
@@ -7,15 +7,20 @@
 	height: 600px;
 }
 
+#wrapper {
+	padding: 20px;
+}
+
 #header {
 	color: red;
+	font-size: 50px;
 }
 
 #myCanvas {
 	border-style: solid;
-	border-width: 5px;
-	width: 350px;
-	height: 350px;
+	border-width: 2px;
+	width: 300px;
+	height: 300px;
 
 
 }

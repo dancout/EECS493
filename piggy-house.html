@@ -11,67 +11,126 @@
 	  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 	</head>
 
+	<script>
+		var count =0;
+	</script>
 
 	<script>
 		function myFunction() {
 		var c = document.getElementById("myCanvas");
 		var ctx = c.getContext("2d");
+		count = count + 1;
 
-		// house frame
-		ctx.fillStyle = "blue";
-		ctx.fillRect(5, 50, 200, 50);
+		if (count == 1 || count == 3) 
+		{
 
-		// door
-		ctx.fillStyle = "black";
-		ctx.fillRect(90, 70, 30, 30);
+			ctx.clearRect(0,0,300,300);
+			// house frame
+			ctx.fillStyle = "blue";
+			ctx.fillRect(5, 50, 200, 50);
+			
+			// door
+			ctx.fillStyle = "black";
+			ctx.fillRect(90, 70, 30, 30);
 
-		// side frame
-		ctx.fillStyle = "red";
-		ctx.beginPath();
-		ctx.moveTo(205, 50);
-		ctx.lineTo(220, 45);
-		ctx.lineTo(220, 95);
-		ctx.lineTo(205, 100);
-		ctx.lineTo(205, 50);
-		ctx.fill();
-		
-		// main roof
-		ctx.fillStyle = "red";
-		ctx.beginPath();
-		ctx.moveTo(5, 50);
-		ctx.lineTo(205, 50);
-		ctx.lineTo(90, 25);
-		ctx.lineTo(5, 50);
-		ctx.fill();
+			// side frame
+			ctx.fillStyle = "red";
+			ctx.beginPath();
+			ctx.moveTo(205, 50);
+			ctx.lineTo(220, 45);
+			ctx.lineTo(220, 95);
+			ctx.lineTo(205, 100);
+			ctx.lineTo(205, 50);
+			ctx.fill();
 
-		// side roof
-		ctx.fillStyle = "blue";
-		ctx.beginPath();
-		ctx.moveTo(90, 25);
-		ctx.lineTo(205, 50);
-		ctx.lineTo(220, 45);
-		ctx.lineTo(90, 25);
-		ctx.fill();
+			// main roof
+			ctx.fillStyle = "red";
+			ctx.beginPath();
+			ctx.moveTo(5, 50);
+			ctx.lineTo(205, 50);
+			ctx.lineTo(90, 25);
+			ctx.lineTo(5, 50);
+			ctx.fill();
 
+			// side roof
+			ctx.fillStyle = "blue";
+			ctx.beginPath();
+			ctx.moveTo(90, 25);
+			ctx.lineTo(205, 50);
+			ctx.lineTo(220, 45);
+			ctx.lineTo(90, 25);
+			ctx.fill();
+		}
 
+		else if (count == 2) 
+		{
+
+			ctx.clearRect(0,0,300,300);
+			// house frame
+			ctx.fillStyle = "red";
+			ctx.fillRect(5, 50, 200, 50);
+			
+			// door
+			ctx.fillStyle = "black";
+			ctx.fillRect(90, 70, 30, 30);
+
+			// side frame
+			ctx.fillStyle = "blue";
+			ctx.beginPath();
+			ctx.moveTo(205, 50);
+			ctx.lineTo(220, 45);
+			ctx.lineTo(220, 95);
+			ctx.lineTo(205, 100);
+			ctx.lineTo(205, 50);
+			ctx.fill();
+
+			// main roof
+			ctx.fillStyle = "blue";
+			ctx.beginPath();
+			ctx.moveTo(5, 50);
+			ctx.lineTo(205, 50);
+			ctx.lineTo(90, 25);
+			ctx.lineTo(5, 50);
+			ctx.fill();
+
+			// side roof
+			ctx.fillStyle = "red";
+			ctx.beginPath();
+			ctx.moveTo(90, 25);
+			ctx.lineTo(205, 50);
+			ctx.lineTo(220, 45);
+			ctx.lineTo(90, 25);
+			ctx.fill();
+		}
+
+		if (count == 3) {
+			document.getElementById("myCanvas").style.borderColor = "red";
+			document.getElementById("myCanvas").style.borderWidth = "20px";
+		}
+
+		if (!(count % 3)) {
+			alert("the house survived 3 blows");
+		}
 		}
 	</script>
 
 	<body>
 		<div id="wrapper">
-			<!-- title -->
-			<h1 id="header">A House To Last</h1>
+			<div id="mainContent">
+				<!-- title -->
+				<h3 id="header">A House To Last</h3>
 
-			<!-- drawing canvas area -->
-			<canvas id="myCanvas">
+				<!-- drawing canvas area -->
+				<canvas id="myCanvas">
 
-			</canvas>
+				</canvas>
 
 
 
-			<!-- button below canvas -->
-			<div>
-				<button class = "btn btn-default" onclick = "myFunction()">DRAW</button>
+				<!-- button below canvas -->
+				<div>
+					<button class = "btn btn-default" onclick = "myFunction()">DRAW</button>
+				</div>
 			</div>
 
 		</div>
